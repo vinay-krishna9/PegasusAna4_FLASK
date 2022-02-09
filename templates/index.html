@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abstractive Summarization</title>
+    <link rel="stylesheet" href="{{ 
+        url_for('static', filename='css/main.css')
+     }}">
+</head>
+<body>
+    <img src="https://miro.medium.com/max/1200/1*48-ZL-WBZXFji8WZ7nJWKg.png" alt="">
+    <form action="summary" method="post">
+        <textarea type="text" name="data_input"> Enter Paragraph Here </textarea>
+        <br>
+        <input type="submit" value="Summarize" id="summary">
+        {% for message in get_flashed_messages() %}
+            <p> {{ message }} </p>
+        {% endfor %}
+    </form>
+</body>
+</html>
